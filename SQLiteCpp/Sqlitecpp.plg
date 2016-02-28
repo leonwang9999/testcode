@@ -1,0 +1,134 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: Sqlitecpp - Win32 Release--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating temporary file "C:\DOCUME~1\LEONLE~1.000\LOCALS~1\Temp\RSP39C.tmp" with contents
+[
+/nologo /MT /W3 /GX /O2 /D "NDEBUG" /D "WIN32" /D "_WINDOWS" /D "_MBCS" /D "SQLITE_ENABLE_COLUMN_METADATA" /Fp"Release/Sqlitecpp.pch" /YX /Fo"Release/" /Fd"Release/" /FD /c 
+"C:\cproject\SQLiteCpp\src\Backup.cpp"
+"C:\cproject\SQLiteCpp\src\Column.cpp"
+"C:\cproject\SQLiteCpp\src\Database.cpp"
+"C:\cproject\SQLiteCpp\src\Statement.cpp"
+"C:\cproject\SQLiteCpp\src\Transaction.cpp"
+"C:\cproject\SQLiteCpp\sqlite3\sqlite3.c"
+]
+Creating command line "cl.exe @C:\DOCUME~1\LEONLE~1.000\LOCALS~1\Temp\RSP39C.tmp" 
+Creating command line "link.exe -lib /nologo /out:"Release\SqlitecppR.lib"  .\Release\Backup.obj .\Release\Column.obj .\Release\Database.obj .\Release\Statement.obj .\Release\Transaction.obj .\Release\sqlite3.obj "
+<h3>Output Window</h3>
+Compiling...
+Backup.cpp
+Column.cpp
+Database.cpp
+Statement.cpp
+Transaction.cpp
+sqlite3.c
+C:\cproject\SQLiteCpp\sqlite3\sqlite3.c(21608) : warning C4090: 'function' : different 'volatile' qualifiers
+C:\cproject\SQLiteCpp\sqlite3\sqlite3.c(21608) : warning C4022: 'InterlockedCompareExchange' : pointer mismatch for actual parameter 1
+C:\cproject\SQLiteCpp\sqlite3\sqlite3.c(21608) : warning C4022: 'InterlockedCompareExchange' : pointer mismatch for actual parameter 2
+C:\cproject\SQLiteCpp\sqlite3\sqlite3.c(21631) : warning C4090: 'function' : different 'volatile' qualifiers
+C:\cproject\SQLiteCpp\sqlite3\sqlite3.c(21631) : warning C4022: 'InterlockedCompareExchange' : pointer mismatch for actual parameter 1
+C:\cproject\SQLiteCpp\sqlite3\sqlite3.c(21631) : warning C4022: 'InterlockedCompareExchange' : pointer mismatch for actual parameter 3
+C:\cproject\SQLiteCpp\sqlite3\sqlite3.c(21631) : warning C4047: '==' : 'void *' differs in levels of indirection from 'const int '
+C:\cproject\SQLiteCpp\sqlite3\sqlite3.c(25683) : warning C4056: overflow in floating-point constant arithmetic
+C:\cproject\SQLiteCpp\sqlite3\sqlite3.c(65536) : warning C4049: compiler limit : terminating line number emission
+C:\cproject\SQLiteCpp\sqlite3\sqlite3.c(72033) : warning C4550: expression evaluates to a function which is missing an argument list
+C:\cproject\SQLiteCpp\sqlite3\sqlite3.c(72040) : warning C4550: expression evaluates to a function which is missing an argument list
+C:\cproject\SQLiteCpp\sqlite3\sqlite3.c(72044) : warning C4550: expression evaluates to a function which is missing an argument list
+C:\cproject\SQLiteCpp\sqlite3\sqlite3.c(82919) : warning C4550: expression evaluates to a function which is missing an argument list
+C:\cproject\SQLiteCpp\sqlite3\sqlite3.c(82921) : warning C4550: expression evaluates to a function which is missing an argument list
+C:\cproject\SQLiteCpp\sqlite3\sqlite3.c(82923) : warning C4550: expression evaluates to a function which is missing an argument list
+C:\cproject\SQLiteCpp\sqlite3\sqlite3.c(23340) : warning C4761: integral size mismatch in argument; conversion supplied
+C:\cproject\SQLiteCpp\sqlite3\sqlite3.c(25683) : warning C4756: overflow in constant arithmetic
+C:\cproject\SQLiteCpp\sqlite3\sqlite3.c(25683) : warning C4756: overflow in constant arithmetic
+warning C4761: integral size mismatch in argument; conversion supplied
+warning C4761: integral size mismatch in argument; conversion supplied
+warning C4761: integral size mismatch in argument; conversion supplied
+C:\cproject\SQLiteCpp\sqlite3\sqlite3.c(-3692) : warning C4761: integral size mismatch in argument; conversion supplied
+C:\cproject\SQLiteCpp\sqlite3\sqlite3.c(-3692) : warning C4761: integral size mismatch in argument; conversion supplied
+C:\cproject\SQLiteCpp\sqlite3\sqlite3.c(-3374) : warning C4761: integral size mismatch in argument; conversion supplied
+C:\cproject\SQLiteCpp\sqlite3\sqlite3.c(-3360) : warning C4761: integral size mismatch in argument; conversion supplied
+warning C4761: integral size mismatch in argument; conversion supplied
+warning C4761: integral size mismatch in argument; conversion supplied
+warning C4761: integral size mismatch in argument; conversion supplied
+warning C4761: integral size mismatch in argument; conversion supplied
+warning C4761: integral size mismatch in argument; conversion supplied
+warning C4761: integral size mismatch in argument; conversion supplied
+warning C4761: integral size mismatch in argument; conversion supplied
+warning C4761: integral size mismatch in argument; conversion supplied
+warning C4761: integral size mismatch in argument; conversion supplied
+warning C4761: integral size mismatch in argument; conversion supplied
+warning C4761: integral size mismatch in argument; conversion supplied
+warning C4761: integral size mismatch in argument; conversion supplied
+warning C4761: integral size mismatch in argument; conversion supplied
+warning C4761: integral size mismatch in argument; conversion supplied
+warning C4761: integral size mismatch in argument; conversion supplied
+warning C4761: integral size mismatch in argument; conversion supplied
+warning C4761: integral size mismatch in argument; conversion supplied
+warning C4761: integral size mismatch in argument; conversion supplied
+warning C4761: integral size mismatch in argument; conversion supplied
+warning C4761: integral size mismatch in argument; conversion supplied
+warning C4761: integral size mismatch in argument; conversion supplied
+warning C4761: integral size mismatch in argument; conversion supplied
+warning C4761: integral size mismatch in argument; conversion supplied
+warning C4761: integral size mismatch in argument; conversion supplied
+warning C4761: integral size mismatch in argument; conversion supplied
+warning C4761: integral size mismatch in argument; conversion supplied
+warning C4761: integral size mismatch in argument; conversion supplied
+warning C4761: integral size mismatch in argument; conversion supplied
+warning C4761: integral size mismatch in argument; conversion supplied
+warning C4761: integral size mismatch in argument; conversion supplied
+warning C4761: integral size mismatch in argument; conversion supplied
+warning C4761: integral size mismatch in argument; conversion supplied
+warning C4761: integral size mismatch in argument; conversion supplied
+warning C4761: integral size mismatch in argument; conversion supplied
+warning C4761: integral size mismatch in argument; conversion supplied
+warning C4761: integral size mismatch in argument; conversion supplied
+warning C4761: integral size mismatch in argument; conversion supplied
+warning C4761: integral size mismatch in argument; conversion supplied
+warning C4761: integral size mismatch in argument; conversion supplied
+Creating library...
+
+
+
+<h3>Results</h3>
+SqlitecppR.lib - 0 error(s), 64 warning(s)
+<h3>
+--------------------Configuration: Sqlitecpp - Win32 Debug--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating temporary file "C:\DOCUME~1\LEONLE~1.000\LOCALS~1\Temp\RSP39D.tmp" with contents
+[
+/nologo /MTd /w /W0 /Gm /GX /ZI /Od /D "_DEBUG" /D "SQLITE_ENABLE_COLUMN_METADATA" /D "WIN32" /D "_WINDOWS" /D "_MBCS" /FR"Debug/" /Fp"Debug/Sqlitecpp.pch" /YX /Fo"Debug/" /Fd"Debug/" /FD /GZ /c 
+"C:\cproject\SQLiteCpp\src\Backup.cpp"
+"C:\cproject\SQLiteCpp\src\Column.cpp"
+"C:\cproject\SQLiteCpp\src\Database.cpp"
+"C:\cproject\SQLiteCpp\src\Statement.cpp"
+"C:\cproject\SQLiteCpp\src\Transaction.cpp"
+"C:\cproject\SQLiteCpp\sqlite3\sqlite3.c"
+]
+Creating command line "cl.exe @C:\DOCUME~1\LEONLE~1.000\LOCALS~1\Temp\RSP39D.tmp" 
+Creating command line "link.exe -lib /nologo /out:"Debug\SqlitecppD.lib"  .\Debug\Backup.obj .\Debug\Column.obj .\Debug\Database.obj .\Debug\Statement.obj .\Debug\Transaction.obj .\Debug\sqlite3.obj "
+<h3>Output Window</h3>
+Compiling...
+Backup.cpp
+Column.cpp
+Database.cpp
+Statement.cpp
+Transaction.cpp
+sqlite3.c
+Creating library...
+Creating command line "bscmake.exe /nologo /o"Debug/Sqlitecpp.bsc"  .\Debug\Backup.sbr .\Debug\Column.sbr .\Debug\Database.sbr .\Debug\Statement.sbr .\Debug\Transaction.sbr .\Debug\sqlite3.sbr"
+Creating browse info file...
+<h3>Output Window</h3>
+
+
+
+<h3>Results</h3>
+SqlitecppD.lib - 0 error(s), 0 warning(s)
+</pre>
+</body>
+</html>

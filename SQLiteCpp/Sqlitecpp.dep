@@ -1,0 +1,49 @@
+# Microsoft Developer Studio Generated Dependency File, included by Sqlitecpp.mak
+
+.\src\Backup.cpp : \
+	"..\..\..\program files\microsoft visual studio\vc98\include\sqlite3.h"\
+	".\include\SQLiteCpp\Backup.h"\
+	".\include\SQLiteCpp\Column.h"\
+	".\include\SQLiteCpp\Database.h"\
+	".\include\SQLiteCpp\Exception.h"\
+	".\include\SQLiteCpp\Statement.h"\
+	
+
+.\src\Column.cpp : \
+	"..\..\..\program files\microsoft visual studio\vc98\include\sqlite3.h"\
+	".\include\SQLiteCpp\Column.h"\
+	".\include\SQLiteCpp\Exception.h"\
+	".\include\SQLiteCpp\Statement.h"\
+	
+
+.\src\Database.cpp : \
+	"..\..\..\program files\microsoft visual studio\vc98\include\sqlite3.h"\
+	".\include\SQLiteCpp\Assertion.h"\
+	".\include\SQLiteCpp\Column.h"\
+	".\include\SQLiteCpp\Database.h"\
+	".\include\SQLiteCpp\Exception.h"\
+	".\include\SQLiteCpp\Statement.h"\
+	
+
+.\src\Statement.cpp : \
+	"..\..\..\program files\microsoft visual studio\vc98\include\sqlite3.h"\
+	".\include\SQLiteCpp\Assertion.h"\
+	".\include\SQLiteCpp\Column.h"\
+	".\include\SQLiteCpp\Database.h"\
+	".\include\SQLiteCpp\Exception.h"\
+	".\include\SQLiteCpp\Statement.h"\
+	
+
+.\src\Transaction.cpp : \
+	"..\..\..\program files\microsoft visual studio\vc98\include\sqlite3.h"\
+	".\include\SQLiteCpp\Assertion.h"\
+	".\include\SQLiteCpp\Column.h"\
+	".\include\SQLiteCpp\Database.h"\
+	".\include\SQLiteCpp\Exception.h"\
+	".\include\SQLiteCpp\Statement.h"\
+	".\include\SQLiteCpp\Transaction.h"\
+	
+
+.\sqlite3\sqlite3.c : \
+	"..\..\..\program files\microsoft visual studio\vc98\include\basetsd.h"\
+	
