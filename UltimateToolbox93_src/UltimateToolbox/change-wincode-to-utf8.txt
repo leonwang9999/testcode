@@ -1,0 +1,5 @@
+for /r  "C:\cproject\testcode\UltimateToolbox93_src\UltimateToolbox\include\"  %i in (*.h) do iconv.exe -f WINDOWS-1252 -t UTF-8 %i > include\%~ni.utf8
+
+for /r  "C:\cproject\testcode\UltimateToolbox93_src\UltimateToolbox\source\"  %i in (*.cpp) do iconv.exe -f WINDOWS-1252 -t UTF-8 %i > source\%~ni.utf8
+del source\*.cpp
+rename source\*.utf8 *.cpp
