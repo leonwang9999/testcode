@@ -6,72 +6,24 @@
 --------------------Configuration: tt - Win32 Debug--------------------
 </h3>
 <h3>Command Lines</h3>
-Creating temporary file "C:\DOCUME~1\LEONLE~1.000\LOCALS~1\Temp\RSP4BE.tmp" with contents
+Creating temporary file "C:\DOCUME~1\LEONLE~1.000\LOCALS~1\Temp\RSP7FC.tmp" with contents
 [
 /nologo /MTd /w /W0 /Gm /GX /ZI /Od /D "WIN32" /D "_DEBUG" /D "_CONSOLE" /D "_MBCS" /Fo"Debug/" /Fd"Debug/" /FD /GZ /c 
-"C:\cproject\testcode\tt\tt.cpp"
+"C:\cproject\testcode\tt\CallDB.cpp"
 ]
-Creating command line "cl.exe @C:\DOCUME~1\LEONLE~1.000\LOCALS~1\Temp\RSP4BE.tmp" 
-Creating temporary file "C:\DOCUME~1\LEONLE~1.000\LOCALS~1\Temp\RSP4BF.tmp" with contents
+Creating command line "cl.exe @C:\DOCUME~1\LEONLE~1.000\LOCALS~1\Temp\RSP7FC.tmp" 
+Creating temporary file "C:\DOCUME~1\LEONLE~1.000\LOCALS~1\Temp\RSP7FD.tmp" with contents
 [
 kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib sqlitecppD.lib /nologo /subsystem:console /incremental:yes /pdb:"Debug/tt.pdb" /debug /machine:I386 /out:"Debug/tt.exe" /pdbtype:sept /verbose:lib 
 .\Debug\StdAfx.obj
 .\Debug\tt.obj
+.\Debug\CallDB.obj
 ]
-Creating command line "link.exe @C:\DOCUME~1\LEONLE~1.000\LOCALS~1\Temp\RSP4BF.tmp"
+Creating command line "link.exe @C:\DOCUME~1\LEONLE~1.000\LOCALS~1\Temp\RSP7FD.tmp"
 <h3>Output Window</h3>
 Compiling...
-tt.cpp
+CallDB.cpp
 Linking...
-
-Searching Libraries
-    Searching C:\Program Files\Microsoft Visual Studio\VC98\LIB\kernel32.lib:
-    Searching C:\Program Files\Microsoft Visual Studio\VC98\LIB\user32.lib:
-    Searching C:\Program Files\Microsoft Visual Studio\VC98\LIB\gdi32.lib:
-    Searching C:\Program Files\Microsoft Visual Studio\VC98\LIB\winspool.lib:
-    Searching C:\Program Files\Microsoft Visual Studio\VC98\LIB\comdlg32.lib:
-    Searching C:\Program Files\Microsoft Visual Studio\VC98\LIB\advapi32.lib:
-    Searching C:\Program Files\Microsoft Visual Studio\VC98\LIB\shell32.lib:
-    Searching C:\Program Files\Microsoft Visual Studio\VC98\LIB\ole32.lib:
-    Searching C:\Program Files\Microsoft Visual Studio\VC98\LIB\oleaut32.lib:
-    Searching C:\Program Files\Microsoft Visual Studio\VC98\LIB\uuid.lib:
-    Searching C:\Program Files\Microsoft Visual Studio\VC98\LIB\odbc32.lib:
-    Searching C:\Program Files\Microsoft Visual Studio\VC98\LIB\odbccp32.lib:
-    Searching sqlitecppD.lib:
-    Searching C:\Program Files\Microsoft Visual Studio\VC98\LIB\LIBCMTD.lib:
-    Searching C:\Program Files\Microsoft Visual Studio\VC98\LIB\OLDNAMES.lib:
-    Searching C:\Program Files\Microsoft Visual Studio\VC98\LIB\libcpmtd.lib:
-    Searching C:\Program Files\Microsoft Visual Studio\VC98\LIB\kernel32.lib:
-    Searching C:\Program Files\Microsoft Visual Studio\VC98\LIB\user32.lib:
-    Searching C:\Program Files\Microsoft Visual Studio\VC98\LIB\gdi32.lib:
-    Searching C:\Program Files\Microsoft Visual Studio\VC98\LIB\winspool.lib:
-    Searching C:\Program Files\Microsoft Visual Studio\VC98\LIB\comdlg32.lib:
-    Searching C:\Program Files\Microsoft Visual Studio\VC98\LIB\advapi32.lib:
-    Searching C:\Program Files\Microsoft Visual Studio\VC98\LIB\shell32.lib:
-    Searching C:\Program Files\Microsoft Visual Studio\VC98\LIB\ole32.lib:
-    Searching C:\Program Files\Microsoft Visual Studio\VC98\LIB\oleaut32.lib:
-    Searching C:\Program Files\Microsoft Visual Studio\VC98\LIB\uuid.lib:
-    Searching C:\Program Files\Microsoft Visual Studio\VC98\LIB\odbc32.lib:
-    Searching C:\Program Files\Microsoft Visual Studio\VC98\LIB\odbccp32.lib:
-    Searching sqlitecppD.lib:
-    Searching C:\Program Files\Microsoft Visual Studio\VC98\LIB\LIBCMTD.lib:
-    Searching C:\Program Files\Microsoft Visual Studio\VC98\LIB\OLDNAMES.lib:
-    Searching C:\Program Files\Microsoft Visual Studio\VC98\LIB\libcpmtd.lib:
-    Searching C:\Program Files\Microsoft Visual Studio\VC98\LIB\kernel32.lib:
-    Searching C:\Program Files\Microsoft Visual Studio\VC98\LIB\user32.lib:
-    Searching C:\Program Files\Microsoft Visual Studio\VC98\LIB\gdi32.lib:
-    Searching C:\Program Files\Microsoft Visual Studio\VC98\LIB\winspool.lib:
-    Searching C:\Program Files\Microsoft Visual Studio\VC98\LIB\comdlg32.lib:
-    Searching C:\Program Files\Microsoft Visual Studio\VC98\LIB\advapi32.lib:
-    Searching C:\Program Files\Microsoft Visual Studio\VC98\LIB\shell32.lib:
-    Searching C:\Program Files\Microsoft Visual Studio\VC98\LIB\ole32.lib:
-    Searching C:\Program Files\Microsoft Visual Studio\VC98\LIB\oleaut32.lib:
-    Searching C:\Program Files\Microsoft Visual Studio\VC98\LIB\uuid.lib:
-    Searching C:\Program Files\Microsoft Visual Studio\VC98\LIB\odbc32.lib:
-    Searching C:\Program Files\Microsoft Visual Studio\VC98\LIB\odbccp32.lib:
-    Searching sqlitecppD.lib:
-
-Done Searching Libraries
 
 
 

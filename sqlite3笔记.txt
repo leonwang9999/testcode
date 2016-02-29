@@ -1,0 +1,189 @@
+vc6编程 操作sqlite3 3.11做数据纪录 解决淘宝客服数据问题
+
+20190221
+寻到vc6 英文版本安装，然后到微软网站下载 vc6sp6打补丁，可以解决open add files异常问题。
+
+今天顺利编译sqlite3 3.11版本 exe文件解决了编译出故障问题
+纪录：
+ 在http://www.sqlite.org/2016/sqlite-amalgamation-3110000.zip 下载后，这个amalgamation是sql的独立源文件，包含c h 和shell.c文件老的版本没有shell.c
+ 在利用vc6时候 cl编译它出exe 缺省命令如下：
+  cl shell.c sqlite3.c -Fesqlite3.exe  
+  我加了小开关 -w 过滤warning
+  报错
+  Microsoft (R) 32-bit C/C++ Optimizing Compiler Version 12.00.8804 for 80x86
+Copyright (C) Microsoft Corp 1984-1998. All rights reserved.
+
+shell.c
+sqlite3.c
+Generating Code...
+Microsoft (R) Incremental Linker Version 6.00.8447
+Copyright (C) Microsoft Corp 1992-1998. All rights reserved.
+
+/out:sqlite3.exe
+shell.obj
+sqlite3.obj
+sqlite3.obj : error LNK2001: unresolved external symbol __beginthreadex
+sqlite3.obj : error LNK2001: unresolved external symbol __endthreadex
+sqlite3.exe : fatal error LNK1120: 2 unresolved externals
+
+分析原因，可能和线程的某些设定有关系，看
+https://www.sqlite.org/howtocompile.html 原文思路不多，在百度查 error LNK2001: unresolved external symbol __beginthreadex  vc6
+得到
+线程运行时库设置错误, 提示:nafxcwd.lib(thrdcore.obj) : error LNK2001: unresolved external symbol __beginthreadex 
+nafxcwd.lib(thrdcore.obj) : error LNK2001: unresolved external symbol __endthreadex这是因为MFC要使用多线程时库, 需要更改设置: 
+[Project] --> [Settings] --> 选择"C/C++"属性页, 在Category中选择Code Generation,再在Use run-time library中选择Debug Multithreaded或者multithreaded 
+
+其中, Single-Threaded                 单线程静态链接库(release版本) 
+Multithreaded                   多线程静态链接库(release版本) 
+multithreaded DLL               多线程动态链接库(release版本) 
+Debug Single-Threaded           单线程静态链接库(debug版本)
+Debug Multithreaded             多线程静态链接库(debug版本) ) 
+Debug Multithreaded DLL         多线程动态链接库(debug版本) 
+单线程: 不需要多线程调用时, 多用在DOS环境下 
+多线程: 可以并发运行
+静态库: 直接将库与程序Link, 可以脱离MFC库运行
+动态库: 需要相应的DLL动态库, 程序才能运行 
+release版本: 正式发布时使用 
+debug版本: 调试阶段使用    
+
+分析 估计由于cl 开关里面有这个设置 多线程的选项，
+cl /? 
+得到如下
+                                 -LINKING-  这个部分是链接部分，有中文解释
+
+/MD link with MSVCRT.LIB                 /MDd link with MSVCRTD.LIB debug lib
+/ML link with LIBC.LIB                   /MLd link with LIBCD.LIB debug lib
+/MT link with LIBCMT.LIB                 /MTd link with LIBCMTD.LIB debug lib
+/LD Create .DLL                          /F<num> set stack size
+(press <return> to continue)
+/LDd Create .DLL debug libary            /link [linker options and libraries]
+
+/MD : 使用 MSVCRT.lib 创建多线程 DLL 
+/ML : 使用 LIBC.lib 创建单线程可执行文件 
+/MT : 使用 LIBCMT.lib 创建多线程可执行文件 
+
+所以改进 原来的编译命令
+
+   cl -w /MT shell.c sqlite3.c -Fesqlite3.exe     这样就可以编译出exe运行文件 即可以运行在多线程下的文件。
+  这里需要注意的原来的sqlite3 3.11版本的文件设定很好不需要再重复设定文件本身。
+同理 产生dll文件
+  cl -w /MD sqlite3.c -link -dll -out:sqlite3.dll    这个可以生成dll文件
+  
+  cl -w /MD sqlite3.c /link -dll  /DEFAULTLIB:msvcrt.lib -out:sqlite3.dll   ---高版本cl 有-dll开关 vc6不可以
+    /link最后的这个开关 必须在其他开关最后， 相当于 把后面参数传给link.exe来使用
+	类似 cl.exe运行后  运行link.exe
+但是这种dll 无法像是官网下的dll可以导出def
+ 
+	
+如果没def 有dll
+dumpbin /exports sqlite3.dll > exports.txt
+echo LIBRARY SQLITE3 > sqlite3.def
+echo EXPORTS >> sqlite3.def
+for /f "skip=19 tokens=4" %A in (exports.txt) do echo %A >> sqlite3.def
+先导出def文件  
+  
+利用原文件的
+http://www.sqlite.org/2016/sqlite-dll-win32-x86-3110000.zip
+里面 dll def文件可以生成 lib文件 方便编译 可直接放入自己vc工程
+
+lib /def:C:\path\to\sqlite3.def /out:C:\path\to\sqlite3.lib /machine:x86
+lib /def:sqlite3.def /out:sqlite3.lib /machine:x86
+
+
+
+另外直接vc6 ide编译 dll lib 依赖def，
+在SETTING里面预编译项目中 加入
+SQLITE_ENABLE_RTREE,SQLITE_ENABLE_COLUMN_METADATA,THREADSAFE,
+避免error生成 dll  lib
+
+这个过程是下载 http://www.sqlite.org/2016/sqlite-dll-win32-x86-3110000.zip 和 http://www.sqlite.org/2016/sqlite-amalgamation-3110000.zip
+解压def 和 后面的c h文件到一个msvc dll 空工程里面 空的dll工程。 在source  head文件夹里面分别加入文件，resource里面加入def。
+编译整个工程
+出现 debug release版本的 dll lib就好了，记得前面在工程setting里面 预编译开关要放入三个参数，其他的参数可以参考官网来设定。
+
+
+注意sqlite可以程序上直接做库 建表，无需tcp的link端口操作，感觉像是写文件，很方便。
+所以dll是为了自己的mfc文件可以调用，sqlite3.exe是库文件自己可以用来使用试验，还有一些tool http://www.sqlite.org/2016/sqlite-tools-win32-x86-3110000.zip
+除了sqlite3.exe 还有分析和 sqldiff。
+
+任务
+1 数据增删改
+2 建库 建表 删表
+3 设计纪录的表内容
+   运单发出纪录， 运单完成纪录， 回复模板 （发货 售后 ）要和运单号关联，生成自动回复message
+   计算利润， 运输成本 依靠小票，
+   通知信息，发货 
+   查询 日期，淘宝id，货物内容，  
+   网站查询 sureton 反馈消息过滤运单， 输入用户id 对应运单查结果， 结果过滤ems单号
+   网站查询 ems查询 api 反馈结果
+      
+   
+
+   
+   
+   
+   要了解vc中使用#include命令包含头文件所搜寻的路径，必须先了解vc中的几种路径：
+
+1. 系统路径
+
+系统路径在vc中是"Tools->Options->Directories"中"Include files"指定的路径。
+
+打开此对话框会发现默认有这几条路径：
+
+C:\Program Files\Microsoft Visual Studio\VC98\INCLUDE
+
+C:\Program Files\Microsoft Visual Studio\VC98\MFC\INCLUDE
+
+C:\Program Files\Microsoft Visual Studio\VC98\ATL\INCLUDE
+
+我们可以在这里添加，这样我们自己添加的路径也会成为系统路径。添加的格式必须按照上面来写。
+
+2. 当前路径
+
+当前路径是指vc工程中工程文件所在的路径，即.dsw文件所在路径。
+
+网上有很多朋友说，当前路径是指.cpp文件所在路径，经过测试，这个说法也是正确的。但是使用vc编译时，是不正确的。
+
+3. 附加路径
+
+附加路径是指在"Project->Settings->C/C++->Preprocessor->Additional include directories "中指定的路径。
+
+此路径默认为空，我们可以在此处填写需要路径，比如：在此处填入"C:\123\",(不要引号)，那么附加路径就会变成"C:\123\" 。
+
+上面的1，3路径，我们均可以自己编辑。在编辑过程中，可以使用绝对路径，也可以使用相对路径。
+
+比如，在添加系统路径时，可以这样填写：
+
+ .\SRC\  这样写表示，当前目录中的SRC文件夹；
+
+ ..\SRC\  这样写表示，当前目录的上一层目录中SRC文件夹；
+
+ ...\SRC\ 这样写表示，当前目录下  ..\SRC\\ 路径，当然这种写法已经和第一种重叠了。
+
+这种相对路径的写法，vc会自动帮我们转化为绝对路径。
+
+在添加附加路径时，其相对路径的写法和系统路径是一致的。
+
+在vc中使用#include 命令，有三种形式：
+
+1. #include <file.h>
+
+vc执行这条指令时，它会在系统目录中去查找 file.h 文件。
+
+在此条码命令中，vc不会去当前路径和附加路径中查找文件。
+
+2. #include "file.h"
+
+vc执行这条指令时，它首先会搜索附加路径，如果没有则会搜索系统路径，如果还没有则会去搜索当前路径。
+
+3. #include "directory\file.h"
+
+vc执行这条指令时，它会去指定的路径去查找文件，如果没找到，它不会继续查找。 
+  
+  
+  
+  vc6 系统目录 include lib 在 tools->options->directory
+  
+  
+  /Yu"stdafx.h"   			在测试例子的里面去掉 c++/c 编译的这个预编译头设置，就一切ok 
+   我怀疑是在sqlitecpp.lib文件编译时候 我已经有stdafx.h的相关东西了。
