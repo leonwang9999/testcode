@@ -1,0 +1,280 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// French (Canada) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_FRC)
+#ifdef _WIN32
+LANGUAGE LANG_FRENCH, SUBLANG_FRENCH_CANADIAN
+#pragma code_page(1252)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE MOVEABLE PURE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE MOVEABLE PURE 
+BEGIN
+    "#include ""afxres.h""\r\0"
+END
+
+3 TEXTINCLUDE MOVEABLE PURE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_FRC)\r\n"
+    "LANGUAGE 12, 3\r\n"
+    "#pragma code_page(1252)\r\n"
+    "#include ""afxres.rc""     // Composants standard\r\n"
+    "#endif\r\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+#ifndef _MAC
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 2,0,0,0
+ PRODUCTVERSION 2,0,0,0
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x2L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904e4"
+        BEGIN
+            VALUE "Comments", "dcutility@hotmail.com\0"
+            VALUE "CompanyName", "DCUtility\0"
+            VALUE "FileDescription", "Helper Dynamic Link Library\0"
+            VALUE "FileVersion", "2.0\0"
+            VALUE "InternalName", "Helper.dll\0"
+            VALUE "LegalCopyright", "DCUtility. All rights reserved.\0"
+            VALUE "LegalTrademarks", "Copyright © 2007 DCUtility. All rights reserved.\0"
+            VALUE "OriginalFilename", "Helper.dll\0"
+            VALUE "PrivateBuild", "\0"
+            VALUE "ProductName", "ScreenSnaperGadget\0"
+            VALUE "ProductVersion", "1.0\0"
+            VALUE "SpecialBuild", "\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1252
+    END
+END
+
+#endif    // !_MAC
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Cursor
+//
+
+IDC_CURSOR_WINDOW       CURSOR  DISCARDABLE     "res\\WindowMode.cur"
+IDC_CURSOR_TRACKER      CURSOR  DISCARDABLE     "res\\RegionMode2.cur"
+IDC_CURSOR_CROSS        CURSOR  DISCARDABLE     "res\\RegionMode1.cur"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_DIALOG_SNAP_HELPER DIALOGEX 0, 0, 104, 201
+STYLE DS_MODALFRAME | WS_POPUP
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    CONTROL         "",IDC_ZOOM_DRAW,"Static",SS_BLACKRECT,7,112,89,70,
+                    WS_EX_CLIENTEDGE
+    LTEXT           "+\t= Zoom in",IDC_STATIC,9,88,65,8
+    LTEXT           "--\t= Zoom out",IDC_STATIC,9,96,65,8
+    GROUPBOX        "",IDC_STATIC,3,104,98,92,BS_CENTER
+    LTEXT           "Left\t= Accept position",IDC_STATIC,9,11,87,8
+    LTEXT           "RGB: 255-255-255",IDC_COLOR_TEXT,7,184,63,8
+    LTEXT           "Right\t= Abort Capture",IDC_STATIC,9,21,87,8
+    LTEXT           "Esc\t= Abort Capture",IDC_STATIC,9,59,87,8
+    LTEXT           "Arrows\t= Move pos by 1p",IDC_STATIC,9,69,87,8
+    LTEXT           "Space\t= Accept position",IDC_STATIC,9,50,87,8
+    LTEXT           "F1\t= Toggle Help",IDC_STATIC,9,41,87,8
+    CTEXT           "100%",IDC_ZOOM_TEXT,77,88,19,17,SS_CENTERIMAGE
+    LTEXT           "",IDC_COLOR_DRAW,73,184,24,8,SS_SUNKEN
+    LTEXT           "Shift Arr\t= Move pos by 10p",IDC_STATIC,9,77,87,8
+    GROUPBOX        "Mouse",IDC_STATIC,3,2,98,194,BS_CENTER
+    GROUPBOX        "Keyboard",IDC_STATIC,3,31,98,165,BS_CENTER
+END
+
+IDD_DIALOG_SNAP DIALOG DISCARDABLE  0, 0, 36, 35
+STYLE WS_POPUP
+FONT 8, "MS Sans Serif"
+BEGIN
+END
+
+IDD_DIALOG_OPTIONS DIALOGEX 0, 0, 174, 142
+STYLE DS_MODALFRAME | DS_CENTER | WS_POPUP | WS_CAPTION
+EXSTYLE WS_EX_TOOLWINDOW
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "&Apply",IDOK,89,124,38,14
+    PUSHBUTTON      "Cancel",IDCANCEL,131,124,38,14
+    CONTROL         "&Play sound when making snap capture.",
+                    IDC_CHECK_PLAY_SOUND,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,11,92,135,8
+    CONTROL         "&Show size tooltip.",IDC_CHECK_SHOW_TOOLTIP,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,96,18,67,8
+    CONTROL         "Ellipse",IDC_RADIO_SHAPE,"Button",BS_AUTORADIOBUTTON | 
+                    WS_GROUP,11,18,49,8
+    CONTROL         "Rectangle",IDC_RADIO_RECTANGLE,"Button",
+                    BS_AUTORADIOBUTTON,11,31,49,8
+    CONTROL         "Rectangle Round",IDC_RADIO_RECTANGLE_ROUND,"Button",
+                    BS_AUTORADIOBUTTON,11,44,71,8
+    CTEXT           "100",IDC_STATIC_CORNER_WIDTH,136,44,26,8
+    CONTROL         "Spin1",IDC_SPIN_RECTANGLE_ROUND_WIDTH,"msctls_updown32",
+                    UDS_SETBUDDYINT | UDS_ALIGNRIGHT | UDS_AUTOBUDDY | 
+                    UDS_ARROWKEYS | UDS_NOTHOUSANDS,151,44,11,8
+    LTEXT           "Line size:",IDC_STATIC,96,31,30,8
+    CTEXT           "10",IDC_STATIC_BORDER_WIDTH,136,31,26,8
+    CONTROL         "Spin2",IDC_SPIN_BORDER_WIDTH,"msctls_updown32",
+                    UDS_SETBUDDYINT | UDS_ALIGNRIGHT | UDS_AUTOBUDDY | 
+                    UDS_ARROWKEYS | UDS_NOTHOUSANDS,147,31,11,8
+    LTEXT           "Round axe:",IDC_STATIC,96,44,38,8
+    LTEXT           "Background color replacement:",IDC_STATIC,11,78,101,8
+    CONTROL         "&Toggle the help window (Shorcuts, Zooming)",
+                    IDC_CHECK_HELP,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,11,
+                    106,154,8
+    GROUPBOX        "Capture Shape",IDC_STATIC,4,5,166,53,BS_CENTER
+    GROUPBOX        "Global",IDC_STATIC,3,63,166,58,BS_CENTER
+    LTEXT           "",IDC_COLOR,114,77,15,11,SS_SUNKEN
+    PUSHBUTTON      "...",IDC_BUTTON_COLOR,131,77,17,11
+END
+
+IDD_DIALOG_PRINTSCREEN DIALOGEX 0, 0, 1, 1
+STYLE DS_MODALFRAME | DS_SETFOREGROUND | DS_FIXEDSYS | WS_POPUP
+EXSTYLE WS_EX_TOPMOST | WS_EX_APPWINDOW
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON    DISCARDABLE     "res\\Helper.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// WAVE
+//
+
+IDR_SNAP                WAVE    MOVEABLE PURE   "res\\Snap.wav"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// RT_MANIFEST
+//
+
+1                       RT_MANIFEST MOVEABLE PURE "res\\Helper.manifest"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDR_MENU_WINDOW_MODE MENU DISCARDABLE 
+BEGIN
+    POPUP "PopWindow"
+    BEGIN
+        MENUITEM "&Dismiss this Menu",          ID_POP_DISMISS
+        MENUITEM "Accept &Position\tSpace",     ID_POP_ACCEPT
+        MENUITEM "Abort &Capture\tEsc",         ID_POP_ABORT
+        MENUITEM SEPARATOR
+        MENUITEM "Switch to &Desktop Mode",     ID_POP_SWITCH_DESKTOP
+        MENUITEM "Switch to &Region Mode",      ID_POP_SWITCH_REGION
+        MENUITEM SEPARATOR
+        MENUITEM "Window Mode &Options...",     ID_POP_OPTIONS
+        MENUITEM SEPARATOR
+        MENUITEM "Toggle Cursor",               ID_POP_TOGGLE_CURSOR
+        MENUITEM SEPARATOR
+        MENUITEM "Toggle &Help\tF1",            ID_POP_TOGGLE_HELP
+    END
+END
+
+IDR_MENU_REGION_MODE MENU DISCARDABLE 
+BEGIN
+    POPUP "PopRegion"
+    BEGIN
+        MENUITEM "&Dismiss this Menu",          ID_POP_DISMISS
+        MENUITEM "Accept &Position\tSpace",     ID_POP_ACCEPT
+        MENUITEM "Abort &Capture\tEsc",         ID_POP_ABORT
+        MENUITEM SEPARATOR
+        MENUITEM "Switch to &Desktop Mode",     ID_POP_SWITCH_DESKTOP
+        MENUITEM "Switch to &Window Mode",      ID_POP_SWITCH_WINDOW
+        MENUITEM "&Reset the Region Mode",      ID_POP_RESET_REGION
+        MENUITEM SEPARATOR
+        MENUITEM "Region Mode &Options...",     ID_POP_OPTIONS
+        MENUITEM SEPARATOR
+        MENUITEM "Toggle Cursor",               ID_POP_TOGGLE_CURSOR
+        MENUITEM SEPARATOR
+        MENUITEM "Toggle &Help\tF1",            ID_POP_TOGGLE_HELP
+    END
+END
+
+#endif    // French (Canada) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_FRC)
+LANGUAGE 12, 3
+#pragma code_page(1252)
+#include "afxres.rc"     // Composants standard
+#endif
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

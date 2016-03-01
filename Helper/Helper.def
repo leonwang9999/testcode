@@ -1,0 +1,24 @@
+; /*---------------------------------------------------------------------------
+;|                                  DCUtility                                  |
+;|--------------------------------------+--------------------------------------|
+;|    SolutionName : ScreenSnaperGadget                                        |
+;|    ProjectName  : Helper                                                    |
+;|    FileName     : ScreenSnaperHelper.def                                    |
+;|    CreationDate : 2007-03-07                                                |
+;|    Author       : Dany Cantin                                               |
+;|    Comments     : dcutility@hotmail.com                                     |
+;|--------------------------------------+--------------------------------------|
+;|                             Screen Capture Tool                             |
+;|                         Windows Vista SideBar Gadget                        |
+;|--------------------------------------+--------------------------------------|
+;|                          Copyright © 2007 DCUtility                         |
+;|                              All rights reserved.                           |
+; ---------------------------------------------------------------------------*/
+
+LIBRARY     "Helper"
+
+EXPORTS
+GetSnapType      @1
+SetPrintScreen   @2
+ShowSettings     @3
+RegisterListener @4
